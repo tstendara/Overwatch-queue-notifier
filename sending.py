@@ -4,7 +4,7 @@ import smtplib, ssl
 
 
 def send(fullTime):
-    if(configuration.phoneNumber!=''):
+    if(configuration.receiverEmail == ''):
         client = Client(configuration.TWILIO_SID, configuration.TWILIO_TOKEN)
         message = client.messages \
             .create(

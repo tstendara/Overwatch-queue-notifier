@@ -1,9 +1,23 @@
 import pyscreenshot as ImageGrab 
 from PIL import Image
 from sending import send
+from helper import findFile
 import smtplib, ssl
 import time 
 
+credentialFileExists = findFile()
+credentials = {}
+
+if(credentialFileExists == False):
+    print("please run python setup.py first")
+    exit()
+else:
+    fil = open("credentials.txt", "r")
+    credentials["email"] = fil.readline()[:-2] # removing \n 
+    credentials["password"] = fil.readline()
+    print(credentials)
+    
+    
 start = time.time() #queue time
 print("I'll let you know when you're in a game!")
 
@@ -18,7 +32,6 @@ if __name__ == '__main__':
         im = ImageGrab.grab()
         pix_val = list(im.getdata())
         pix_val_flat = [x for sets in pix_val for x in sets]
-        print(len(pix_val_flat))
         cur = pix_val_flat[500]
         
         if last != cur:
@@ -37,6 +50,7 @@ if __name__ == '__main__':
         sec = remainder
 
     fullTime = str(minutes) +':'+ str(sec)
+    
     send(fullTime) 
 
 
