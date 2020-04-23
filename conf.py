@@ -1,3 +1,5 @@
+import os
+
 class configuration:
     #texting
     phoneNumber = ''  
@@ -9,5 +11,3 @@ class configuration:
     senderPass = ''
     message = ''
     receiverEmail = ''
-
-    

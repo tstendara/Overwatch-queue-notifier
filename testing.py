@@ -12,13 +12,13 @@ if __name__ == '__main__':
     im = ImageGrab.grab()
     pix_val = list(im.getdata())
     pix_val_flat = [x for sets in pix_val for x in sets]
-    last = pix_val_flat[500] #find better way to get top right pixel for different resolutions and aspec ratios
-
+    last = pix_val_flat[500] #find better way to get top right pixel for different resolutions and aspect ratios
     
     while keepRunning:
         im = ImageGrab.grab()
         pix_val = list(im.getdata())
         pix_val_flat = [x for sets in pix_val for x in sets]
+        print(len(pix_val_flat))
         cur = pix_val_flat[500]
         
         if last != cur:
