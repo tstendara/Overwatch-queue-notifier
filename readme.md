@@ -4,13 +4,13 @@
 
  - Open file and add to path
 
-![GitHub Logo](/instructions/installpython.png)
+![GitHub Logo](/instructions/installpython.PNG)
 
 
 
 2. download file as zip and save file
 
-![GitHub Logo](/instructions/Capture1.png)
+![GitHub Logo](/instructions/Capture1.PNG)
 
 3. Open your Downloads folder, right click ```Overwatch-queue-notifier.zip ``` and click extract all. This will extract everything to the Downloads folder by default.
 
