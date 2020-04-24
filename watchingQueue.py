@@ -2,33 +2,36 @@ import pyscreenshot as ImageGrab
 from PIL import Image
 from sending import send
 from helper import findFile
-from conf import configuration
 import smtplib, ssl
 import time 
 
-
-textingConfiguration = (configuration.TWILIO_SID != '' or configuration.TWILIO_TOKEN != '' or configuration.phoneNumber != '')
-credentialFileExists = findFile()
+config_does_exist = findFile()
 credentials = {}
-print(textingConfiguration)
-# if both configs dont exist then dont let it go 
-if(credentialFileExists == False and textingConfiguration == False):
+if(config_does_exist):
+    opening = open("credentials.txt", "r")
+    emailortext = opening.readline().strip()
+else:
     print("please run python setup.py first or setup messaging service in readMe")
     exit()
-elif(credentialFileExists):
-    fil = open("credentials.txt", "r")
-    credentials["email"] = fil.readline()[:-2] # removing \n 
-    credentials["password"] = fil.readline()
+
+# if both configs dont exist then dont let it go 
+x = open("credentials.txt", "r")
+
+if(emailortext == 'e'):
+    print("Will notify via", x.readline().strip() + "mail")
+    credentials["email"] = x.readline().strip()  
+    credentials["password"] = x.readline().strip()
     print(credentials)
-elif(textingConfiguration):
-    print("gonna text")
-    credentials["TWILIO_SID"] = configuration.TWILIO_SID
-    credentials["TWILIO_TOKEN"] = configuration.TWILIO_TOKEN
-    credentials["phoneNumber"] = configuration.phoneNumber
-    
+elif(emailortext == 't'):
+    print("Will notify via", x.readline().strip() + "ext")
+    credentials["TWILIO_NUMBER"] = x.readline().strip()
+    credentials["TWILIO_SID"] = x.readline().strip()
+    credentials["TWILIO_TOKEN"] = x.readline().strip()
+    credentials["phoneNumber"] = x.readline().strip()
+
     
 start = time.time() #queue time
-print("I'll let you know when you're in a game!")
+print("Training bot will let you know when you're in a game!")
 
 if __name__ == '__main__':
     keepRunning = True
@@ -58,12 +61,12 @@ if __name__ == '__main__':
         queueTime -= minutes*60
         sec = remainder
 
-    fullTime = str(minutes) +':'+ str(sec)
+    credentials["fulltime"] = str(minutes) +':'+ str(sec)
     
-    if(credentialFileExists):    
-        send(fullTime, credentials) 
+    if(emailortext == 'e'):    
+        send(credentials, True) 
     else:
-        send(fullTime, False)
+        send(credentials, False)
 
 
     
