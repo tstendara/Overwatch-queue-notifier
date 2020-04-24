@@ -10,7 +10,7 @@
 
 2. download file as zip and save file
 
-![GitHub Logo](/instructions/Capture1.PNG)
+![GitHub Logo](/instructions/download.PNG)
 
 3. Open your Downloads folder, right click ```Overwatch-queue-notifier.zip ``` and click extract all. This will extract everything to the Downloads folder by default.
 
