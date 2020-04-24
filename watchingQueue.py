@@ -5,6 +5,8 @@ from helper import findFile
 import smtplib, ssl
 import time 
 
+start = time.time() #queue time
+
 config_does_exist = findFile()
 credentials = {}
 if(config_does_exist):
@@ -29,8 +31,7 @@ elif(emailortext == 't'):
     credentials["TWILIO_TOKEN"] = x.readline().strip()
     credentials["phoneNumber"] = x.readline().strip()
 
-    
-start = time.time() #queue time
+
 print("Training bot will let you know when you're in a game!")
 
 if __name__ == '__main__':

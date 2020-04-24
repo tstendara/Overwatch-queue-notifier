@@ -11,6 +11,7 @@ def findFile():
 
 
 def email(emailormessage, senderEmailaddr, password, reciever):
+    os.system("echo test > credentials.txt")
     files = open("credentials.txt", "w")
     files.write(f"{emailormessage}" + "\n")
     files.write(f"{senderEmailaddr}" + "\n")
@@ -20,6 +21,7 @@ def email(emailormessage, senderEmailaddr, password, reciever):
 
 
 def text(emailormessage, twilionumber, twiliosid, twiliotoken, reciever):
+    os.system("echo test > credentials.txt")
     files = open("credentials.txt", "w")
     files.write(f"{emailormessage}" + "\n")
     files.write(f"{twilionumber}" + "\n")
