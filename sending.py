@@ -3,14 +3,14 @@ from twilio.rest import Client
 import smtplib, ssl
 
 
-def send(fullTime):
-    if(configuration.receiverEmail == ''):
-        client = Client(configuration.TWILIO_SID, configuration.TWILIO_TOKEN)
+def send(data, email):
+    if(email == False):
+        client = Client(data["TWILIO_SID"], data["TWILIO_TOKEN"])
         message = client.messages \
             .create(
-                body='       QUEUE TIME:  '+ str(fullTime) + '     , Goodluck!',
-                from_=configuration.twilioNumber,
-                to=configuration.phoneNumber
+                body='       QUEUE TIME:  '+ data["fulltime"] + '     , Goodluck!',
+                from_=data["TWILIO_NUMBER"],
+                to=data["phoneNumber"]
             )
     else:
         username = configuration.senderEmail
