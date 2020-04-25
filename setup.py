@@ -18,10 +18,8 @@ if(credentialFileExists == True):
     os.system("del credentials.txt")    
 
 if (emailormessage == 'e'):
-    sender_email = input("senders email adress: ")
-    sender_password = input("senders password: ")
-    reciever_email = input("recievers email: ")
-    helper.email(emailormessage, sender_email, sender_password, reciever_email)
+    reciever_email = input("peronal email: ")
+    helper.email(emailormessage, reciever_email)
 elif(emailormessage == 't'):
     Twilio_number = input("Twilio Number: ")
     Twilio_sid = input("Twilio SID: ") 
