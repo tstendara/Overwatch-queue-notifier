@@ -22,7 +22,6 @@ x = open("credentials.txt", "r")
 if(emailortext == 'e'):
     print("Will notify via", x.readline().strip() + "mail")
     credentials["email"] = x.readline().strip()  
-    credentials["password"] = x.readline().strip()
     print(credentials)
 elif(emailortext == 't'):
     print("Will notify via", x.readline().strip() + "ext")
@@ -62,7 +61,7 @@ if __name__ == '__main__':
         queueTime -= minutes*60
         sec = remainder
 
-    credentials["fulltime"] = str(minutes) +':'+ str(sec)
+    credentials["queueTime"] = str(minutes) +':'+ str(sec)
     
     if(emailortext == 'e'):    
         send(credentials, True) 
