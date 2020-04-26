@@ -42,6 +42,4 @@ def sendingEmail(config):
         print("There was an error sending to your personal email")
     else:
         print(result)
-
-
-
+        
