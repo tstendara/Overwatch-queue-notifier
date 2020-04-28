@@ -1,5 +1,7 @@
 import os 
 import requests
+from twilio.rest import Client
+import smtplib, ssl
 # from sending import send
 
 def findFile():
@@ -19,7 +21,6 @@ def email(emailormessage, reciever):
     sendingEmail({"email":f"{reciever}", "queueTime": "testing"})
     
 
-
 def text(emailormessage, twilionumber, twiliosid, twiliotoken, reciever):
     os.system("echo test > credentials.txt")
     files = open("credentials.txt", "w")
@@ -29,7 +30,7 @@ def text(emailormessage, twilionumber, twiliosid, twiliotoken, reciever):
     files.write(f"{twiliotoken}" + "\n")
     files.write(f"{reciever}")
     files.close()
-    send({"TWILIO_SID":f"{twiliosid}", "TWILIO_TOKEN":f"{twiliotoken}", 
+    sendingText({"TWILIO_SID":f"{twiliosid}", "TWILIO_TOKEN":f"{twiliotoken}", 
     "queueTime":"testing", "TWILIO_NUMBER":f"{twilionumber}", "phoneNumber": 
     f"{reciever}"}, False)
 
@@ -49,3 +50,12 @@ def sendingEmail(config):
     else:
         print(result)
         
+
+def sendingText(data):
+    client = Client(data["TWILIO_SID"], data["TWILIO_TOKEN"])
+    message = client.messages \
+        .create(
+            body='QUEUE TIME: '+ data["queueTime"] + ', Goodluck!',
+            from_=data["TWILIO_NUMBER"],
+            to=data["phoneNumber"]
+        )
