@@ -36,17 +36,14 @@ def text(emailormessage, twilionumber, twiliosid, twiliotoken, reciever):
 
 
 def sendingEmail(config):
-
     api = "https://protected-shelf-73940.herokuapp.com/sendEmail"
-
     params = {"data": [config["email"], config["queueTime"]]}
 
     r = requests.post(url = api, data = params )
-
     result = r.text
     
     if(result != "Sent successfully!"):
-        print("There was an error sending to your personal email")
+        print("There was an error sending to your email")
     else:
         print(result)
         
