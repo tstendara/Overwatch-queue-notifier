@@ -22,7 +22,6 @@ x = open("credentials.txt", "r")
 if(emailortext == 'e'):
     print("Will notify via", x.readline().strip() + "mail")
     credentials["email"] = x.readline().strip()  
-    print(credentials)
 elif(emailortext == 't'):
     print("Will notify via", x.readline().strip() + "ext")
     credentials["TWILIO_NUMBER"] = x.readline().strip()
@@ -31,7 +30,7 @@ elif(emailortext == 't'):
     credentials["phoneNumber"] = x.readline().strip()
 
 
-print("Training bot will let you know when you're in a game!")
+print("Jeff will let you know when you're in a game!")
 
 if __name__ == '__main__':
     keepRunning = True
