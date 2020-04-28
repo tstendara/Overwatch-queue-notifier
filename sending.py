@@ -7,7 +7,7 @@ def send(data, email):
         client = Client(data["TWILIO_SID"], data["TWILIO_TOKEN"])
         message = client.messages \
             .create(
-                body='       QUEUE TIME:  '+ data["queueTime"] + '     , Goodluck!',
+                body='\n       QUEUE TIME:  '+ data["queueTime"] + ', Goodluck!',
                 from_=data["TWILIO_NUMBER"],
                 to=data["phoneNumber"]
             )

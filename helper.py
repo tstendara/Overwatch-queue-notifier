@@ -1,5 +1,6 @@
 import os 
 import requests
+# from sending import send
 
 def findFile():
     x = os.listdir()
@@ -15,6 +16,8 @@ def email(emailormessage, reciever):
     files.write(f"{emailormessage}" + "\n")
     files.write(f"{reciever}")
     files.close()
+    sendingEmail({"email":f"{reciever}", "queueTime": "testing"})
+    
 
 
 def text(emailormessage, twilionumber, twiliosid, twiliotoken, reciever):
@@ -26,6 +29,9 @@ def text(emailormessage, twilionumber, twiliosid, twiliotoken, reciever):
     files.write(f"{twiliotoken}" + "\n")
     files.write(f"{reciever}")
     files.close()
+    send({"TWILIO_SID":f"{twiliosid}", "TWILIO_TOKEN":f"{twiliotoken}", 
+    "queueTime":"testing", "TWILIO_NUMBER":f"{twilionumber}", "phoneNumber": 
+    f"{reciever}"}, False)
 
 
 def sendingEmail(config):
