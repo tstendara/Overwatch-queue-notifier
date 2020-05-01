@@ -14,7 +14,7 @@ class testingMethods(unittest.TestCase):
         self.assertTrue(helper.findFile())
 
     def test_deletion(self):
-        os.system("rm credentials.txt")
+        os.system("del credentials.txt")
         self.assertFalse(helper.findFile())
 
     def test_shouldnt_run(self):

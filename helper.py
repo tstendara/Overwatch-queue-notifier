@@ -19,7 +19,7 @@ def email(emailormessage, reciever):
     files.write(f"{reciever}")
     files.close()
     if(emailormessage != "test"):
-        sendingEmail({"email":f"{reciever}", "queueTime": "testing"})
+        sendingEmail({"email":f"{reciever}", "queueTime": "Testing email!"})
     
 
 def text(emailormessage, twilionumber, twiliosid, twiliotoken, reciever):
@@ -54,7 +54,7 @@ def sendingText(data):
     client = Client(data["TWILIO_SID"], data["TWILIO_TOKEN"])
     message = client.messages \
         .create(
-            body='QUEUE TIME: '+ data["queueTime"] + ', Goodluck!',
+            body=data["queueTime"],
             from_=data["TWILIO_NUMBER"],
             to=data["phoneNumber"]
         )

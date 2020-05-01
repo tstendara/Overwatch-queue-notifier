@@ -61,7 +61,7 @@ if __name__ == '__main__':
         queueTime -= minutes*60
         sec = remainder
 
-    credentials["queueTime"] = str(minutes) +':'+ str(sec)
+    credentials["queueTime"] = 'QUEUE TIME: '+ str(minutes) +':'+ str(sec) + ', Goodluck!'
     
     if(emailortext == 'e'):    
         send(credentials, True) 
