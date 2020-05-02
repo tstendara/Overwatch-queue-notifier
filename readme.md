@@ -1,3 +1,6 @@
+# Coming soon!
+
+
 # Configuration
 
 1. [Install Python](https://www.python.org/downloads/) 
@@ -41,12 +44,12 @@ Then enter your email/(Twilio SID, Twilio Token, Twilio number, and your persona
 
 1. Launch Overwatch and change it to bordless windowed so that you can start the script without closing the Overwatch window.
 
-2. If you dont already have Powershell open, run: 
+2. If you dont already have Powershell open, then open Powershell and run: 
 ```
 cd Downloads/Overwatch-queue-notifier-master/Overwatch-queue-notifier-master
 ```
 
-3. Lastly run:
+3. Lastly, whenever you get into queue, run this command and Jeff will do the rest:
 ```
 python watchingQueue.py
 ```
