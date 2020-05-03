@@ -2,7 +2,6 @@ import os
 import requests
 from twilio.rest import Client
 import smtplib, ssl
-# from sending import send
 
 def findFile():
     x = os.listdir()
