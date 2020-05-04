@@ -1,13 +1,12 @@
 import pyscreenshot as ImageGrab 
 from PIL import Image
-from sending import send
-from helper import findFile
+import helper 
 import smtplib, ssl
 import time 
 
 start = time.time() #queue time
 
-config_does_exist = findFile()
+config_does_exist = helper.findFile()
 credentials = {}
 if(config_does_exist):
     opening = open("credentials.txt", "r")
@@ -23,7 +22,7 @@ if(emailortext == 'e'):
     print("Will notify via", x.readline().strip() + "mail")
     credentials["email"] = x.readline().strip()  
 elif(emailortext == 't'):
-    print("Will notify via", x.readline().strip() + "ext")
+    print("Will notify via", x.readline().strip() + "ext" )
     credentials["TWILIO_NUMBER"] = x.readline().strip()
     credentials["TWILIO_SID"] = x.readline().strip()
     credentials["TWILIO_TOKEN"] = x.readline().strip()
@@ -60,12 +59,12 @@ if __name__ == '__main__':
         queueTime -= minutes*60
         sec = remainder
 
-    credentials["queueTime"] = str(minutes) +':'+ str(sec)
+    credentials["queueTime"] = 'QUEUE TIME: '+ str(minutes) +':'+ str(sec) + ', Goodluck!'
     
     if(emailortext == 'e'):    
-        send(credentials, True) 
+        helper.sendingEmail(credentials) 
     else:
-        send(credentials, False)
+        helper.sendingText(credentials)
 
 
     
