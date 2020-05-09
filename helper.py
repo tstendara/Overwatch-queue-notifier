@@ -50,6 +50,7 @@ def sendingEmail(config):
         
 
 def sendingText(data):
+    print(data)
     client = Client(data["TWILIO_SID"], data["TWILIO_TOKEN"])
     message = client.messages \
         .create(

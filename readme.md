@@ -1,15 +1,10 @@
-# Coming soon!
-
-
-# Configuration
+# Getting Started
 
 1. [Install Python](https://www.python.org/downloads/) 
 
  - Open file and add to path
 
 ![GitHub Logo](/instructions/installpython.PNG)
-
-
 
 2. download file as zip and save file
 
@@ -25,32 +20,16 @@ python install -r requirements.txt
 ```
 
 
-# Email/Texting setup
+# Email/Messaging setup
 
-1. Run this command:
-```
-python setup.py
-```
-Then enter your email/(Twilio SID, Twilio Token, Twilio number, and your personal number), and thats it for setup! Continue to [Start the Script](#Starting-the-Script)
+## Email setup
 
--After running setup you'll be texted/emailed for a test.
-<br />
+1. First you must create another gmail in order to send emails to your primary email in order to get notified.
+[Create New Gmail](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp)
+
+2. In order for the script to use the new gmail account, you must change your securtiy
 
 
 
 
-
-# Starting the Script
-
-1. Launch Overwatch and change it to bordless windowed so that you can start the script without closing the Overwatch window.
-
-2. If you dont already have Powershell open, then open Powershell and run: 
-```
-cd Downloads/Overwatch-queue-notifier-master/Overwatch-queue-notifier-master
-```
-
-3. Lastly, whenever you get into queue, run this command and Jeff will do the rest:
-```
-python watchingQueue.py
-```
-
+setup db to get email information, so that people dont need to setup another email
