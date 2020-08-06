@@ -1,3 +1,8 @@
+# About
+This app solves the problem with long queue times for dps on Overwatch utilizing this notification system which will notify the user upon finding a game with low latency. 
+
+* All user information is stored in plain .txt files on the users computer.
+
 # Getting Started
 
 1. [Install Python](https://www.python.org/downloads/) 
@@ -20,16 +25,27 @@ python install -r requirements.txt
 ```
 
 
-# Email/Messaging setup
+# Email/Text setup
 
-## Email setup
+Run the following command:
+```
+python setup.py
+```
 
-1. First you must create another gmail in order to send emails to your primary email in order to get notified.
-[Create New Gmail](https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp)
+## Email 
+```
+[e] or [email]
+```
+You'll then be prompted to input your email, after entering your info. You wont need to run 
+setup again unless you need to change the email or the way that you would like to be 
+notified. 
 
-2. In order for the script to use the new gmail account, you must change your securtiy
+## Text
+```
+[t] or [text]
+```
+
+In order to use the texting service, you must setup an account on https://www.twilio.com/. Then go to Dashboard -- there you'll find your Trial Number, Account SID and AUTH token which is all required for the text setup. You wont need to run setup again unless you need to change the personal or the way that you would like to be notified.
 
 
 
-
-setup db to get email information, so that people dont need to setup another email
