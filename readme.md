@@ -22,24 +22,26 @@ Run the following command:
 python setup.py
 ```
 
+- You wont need to run 
+setup again unless you need to change the email or the way that you would like to be 
+notified. 
+
 ## Email 
 ```
 [e] or [email]
 ```
-You'll then be prompted to input your email, after entering your info. You wont need to run 
-setup again unless you need to change the email or the way that you would like to be 
-notified. 
+You'll then be prompted to input your email.
 
 ## Text
 ```
 [t] or [text]
 ```
 
-In order to use the texting service, you must setup an account on https://www.twilio.com/. Then go to Dashboard -- there you'll find your Trial Number, Account SID and AUTH token which is all required for the text setup. You wont need to run setup again unless you need to change the personal or the way that you would like to be notified.
+In order to use the texting service, you must setup an account on https://www.twilio.com/. Then go to Dashboard -- there you'll find your Trial Number, Account SID and AUTH token which is all required for the text setup.
 
 # Running the software
 
-1. Change Overwatch display to windowed, or borderless
+1. Change Overwatch display to windowed or borderless
 2. Navigate to Career profile
 3. Open terminal(insure that the terminal window isn't on the top left of the screen) and run ```python watchingQueue.py``` 
 
