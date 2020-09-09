@@ -7,10 +7,7 @@ This app aides the problem with long queue times for dps on Overwatch. This soft
 
 1. [Install Python](https://www.python.org/downloads/) 
 
- - Open file and add to path
-
-![GitHub Logo](/instructions/installpython.PNG)
-
+ - Add to python to PATH
 
 2. From the root of `Overwatch-queue-notifier-master`, run 
 ```
