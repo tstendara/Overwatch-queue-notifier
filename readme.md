@@ -1,7 +1,7 @@
 # About
 This app aides the problem with long queue times for dps on Overwatch. This software will notify the user upon finding a game with low latency giving the user the freedom to move freely from their pc, worry-free that they may get into a match unnoticed.  
 
-[] All user information is stored in plain .txt files on the users computer.
+- All user information is stored in plain .txt files on the users computer.
 
 # Getting Started
 
